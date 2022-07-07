@@ -1,9 +1,9 @@
 # DigimasterNewsApi
 <table>
   <tr>
-    <td><img src="https://github.com/arifstack/SaltNewsApi/blob/main/preview/image_1.png" width=230 height=380></td>
-    <td><img src="https://github.com/arifstack/SaltNewsApi/blob/main/preview/image_2.png" width=230 height=380></td>
-    <td><img src="https://github.com/arifstack/SaltNewsApi/blob/main/preview/image_3.png" width=230 height=380></td>
+    <td><img src="https://github.com/arifstack/Digimaster-News/blob/main/preview/image_1.png" width=230 height=380></td>
+    <td><img src="https://github.com/arifstack/Digimaster-News/blob/main/preview/image_2.png" width=230 height=380></td>
+    <td><img src="https://github.com/arifstack/Digimaster-News/blob/main/preview/image_3.png" width=230 height=380></td>
   </tr>
 </table>
 
