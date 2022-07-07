@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DigiNews</string>
+    <string name="with_no_author">No author</string>
+    <string name="with_no_description">Description is empty</string>
+    <string name="placeholder_seconds_ago">%1$d seconds ago</string>
+    <string name="placeholder_minutes_ago">%1$d minutes ago</string>
+    <string name="placeholder_hours_ago">%1$d hours ago</string>
+    <string name="placeholder_days_ago">%1$d days ago</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="business">business</string>
+    <string name="general">general</string>
+    <string name="entertainment">entertainment</string>
+    <string name="health">health</string>
+    <string name="science">science</string>
+    <string name="sports">sports</string>
+    <string name="technology">technology</string>
+    <string name="search_news">Seacrh News</string>
+    <string name="source">Source By : </string>
+</resources>
