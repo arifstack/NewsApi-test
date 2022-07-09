@@ -24,8 +24,8 @@ class SourceViewModel @Inject constructor(
     private val myApplication: Application,
 ) : AndroidViewModel(myApplication) {
 
-    private val _articlesList = MutableLiveData<List<SourceUi>>()
-    val articlesList: LiveData<List<SourceUi>> = _articlesList
+    private val _sourceList = MutableLiveData<List<SourceUi>>()
+    val sourceList: LiveData<List<SourceUi>> = _sourceList
 
     private val _status = MutableLiveData<Resource<SourceDTO>>()
     val status: LiveData<Resource<SourceDTO>> = _status
@@ -33,15 +33,15 @@ class SourceViewModel @Inject constructor(
     private var currentCategory = Categories.general
 
     init {
-        loadNews()
+        loadSource()
     }
 
     fun changeCategory(newCategory: Categories) {
         currentCategory = newCategory
-        loadNews()
+        loadSource()
     }
 
-    fun loadNews() = viewModelScope.launch {
+    fun loadSource() = viewModelScope.launch {
 
         _status.value = Resource.Loading()
 
@@ -52,7 +52,7 @@ class SourceViewModel @Inject constructor(
         if (news is Resource.Success) {
             val articlesUi =
                 SourceMapper(myApplication.applicationContext).map(news.data!!.sources)
-            _articlesList.postValue(articlesUi)
+            _sourceList.postValue(articlesUi)
         }
     }
 }

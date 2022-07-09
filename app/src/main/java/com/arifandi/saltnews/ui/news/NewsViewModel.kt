@@ -6,8 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.arifandi.saltnews.common.ArticlesMapper
-import com.arifandi.saltnews.common.SourceMapper
-import com.arifandi.saltnews.common.Categories
 import com.arifandi.saltnews.common.Resource
 import com.arifandi.saltnews.data.model.NewsDTO
 import com.arifandi.saltnews.domain.models.ArticleUi
@@ -40,6 +38,7 @@ class NewsViewModel @Inject constructor(
         currentCategory = newCategory
         loadNews()
     }
+
 
     fun loadNews() = viewModelScope.launch {
 

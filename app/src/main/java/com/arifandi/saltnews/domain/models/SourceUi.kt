@@ -15,8 +15,4 @@ data class SourceUi(
     val category: String?=null,
     val language: String? = null,
     val country: String?=null
-) : Parcelable {
-    companion object {
-        const val EMPTY_URL = ""
-    }
-}
+) : Parcelable

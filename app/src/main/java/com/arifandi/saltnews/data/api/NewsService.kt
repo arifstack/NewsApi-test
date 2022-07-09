@@ -19,11 +19,5 @@ interface NewsService {
     @GET("top-headlines?country=us&apiKey=$API_SECRET")
     suspend fun getNews(@Query("category") categories: String): Response<NewsDTO>
 
-    @GET("everything&apiKey=$API_SECRET")
-    suspend fun searchSource(@Query("q") categories: String): Response<NewsDTO>
-
-    @GET("everything&apiKey=$API_SECRET")
-    suspend fun searchNews(@Query("q") categories: String): Response<NewsDTO>
-
 
 }

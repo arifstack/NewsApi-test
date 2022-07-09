@@ -1,7 +1,6 @@
 package com.arifandi.saltnews.ui.news
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arifandi.saltnews.R
-import com.arifandi.saltnews.common.Categories
 import com.arifandi.saltnews.common.Resource
 import com.arifandi.saltnews.databinding.FragmentNewsBinding
-import com.arifandi.saltnews.domain.models.ArticleUi
 import com.arifandi.saltnews.domain.models.SourceUi
 import com.arifandi.saltnews.ui.BaseFragment
 import com.arifandi.saltnews.ui.news.adapter.ArticlesAdapter
@@ -42,7 +39,22 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
         setupRecyclerView()
         setupObservers()
 
+        binding.searchBar.apply {
+            queryHint ="Search"
+            setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener,
+                SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String): Boolean {
+                    binding.searchBar.clearFocus()
+                    return true
+                }
 
+                override fun onQueryTextChange(newText: String): Boolean {
+                    articlesAdapter.filter.filter(newText)
+                    return false
+                }
+            })
+
+        }
     }
 
     private fun setupRecyclerView() = with(binding) {
@@ -50,9 +62,8 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
             adapter = articlesAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
-
         newsViewModel.articlesList.observe(viewLifecycleOwner) {
-            articlesAdapter.submitList(it)
+            articlesAdapter.addData(it)
         }
         articlesAdapter.onClickNewsItem = {
             val bundle = Bundle().apply {
@@ -66,7 +77,6 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
     }
 
     private fun setupObservers() = with(binding) {
-
         newsViewModel.status.observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Success -> {

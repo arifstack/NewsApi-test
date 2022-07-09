@@ -20,14 +20,22 @@
     <TextView
         android:id="@+id/source"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:text="News"
         android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
         android:paddingLeft="18dp"
-        android:textStyle="bold"
-        android:background="@color/purple_200"/>
+        android:textStyle="bold"/>
 
+    <SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:textColor="@color/white"
+        android:queryHint="Search"
+        android:layout_margin="18dp"
+        android:background="@drawable/bg_search_view"/>
 
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
