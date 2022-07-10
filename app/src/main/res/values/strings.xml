@@ -16,4 +16,5 @@
     <string name="technology">technology</string>
     <string name="search_news">Seacrh News</string>
     <string name="source">Source By : </string>
+    <string name="error_message">Terjadi Kesalahan</string>
 </resources>

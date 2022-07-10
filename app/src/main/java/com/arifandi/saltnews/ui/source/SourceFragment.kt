@@ -1,6 +1,7 @@
 package com.arifandi.saltnews.ui.source
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -90,7 +91,8 @@ class SourceFragment : BaseFragment<FragmentSourceBinding>(){
                 }
                 is Resource.Error -> {
                     internetConnectionStatus.isVisible = true
-                    internetConnectionStatus.text = it.message
+                    internetConnectionStatus.text = getString(R.string.error_message)
+                    Log.d("setupObservers","${it.data?.status}")
                 }
                 is Resource.Loading -> {
                     internetConnectionStatus.isVisible = true
